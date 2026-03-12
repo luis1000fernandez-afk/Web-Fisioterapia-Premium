@@ -2,6 +2,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, CheckCircle2, Activity, Heart, Shield, Star, MapPin, Map } from "lucide-react";
 
+import heroImg from "../../public/images/hero.png";
+import team1Img from "../../public/images/team1.png";
+import team2Img from "../../public/images/team2.png";
+import team3Img from "../../public/images/team3.png";
+import team4Img from "../../public/images/team4.png";
+
 export default function Home() {
   return (
     <div className="flex flex-col w-full">
@@ -58,7 +64,7 @@ export default function Home() {
             <div className="relative w-full h-full rounded-[2rem] overflow-hidden border-8 border-white shadow-2xl flex items-center justify-center">
               <div className="absolute inset-0 bg-gradient-to-tr from-secondary/10 to-transparent z-10 pointer-events-none"></div>
               <Image
-                src="/images/hero.png"
+                src={heroImg}
                 alt="Fisioterapeuta tratando a un paciente"
                 fill
                 priority
@@ -103,7 +109,7 @@ export default function Home() {
               <p className="mb-6 text-muted-foreground leading-relaxed">
                 Prevención, tratamiento y readaptación de lesiones deportivas para devolverte al máximo rendimiento lo antes posible.
               </p>
-              <Link href="#" className="inline-flex items-center text-sm font-medium text-primary group-hover:text-secondary transition-colors">
+              <Link href="#reserva" className="inline-flex items-center text-sm font-medium text-primary group-hover:text-secondary transition-colors">
                 Ver tratamientos <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </div>
@@ -116,7 +122,7 @@ export default function Home() {
               <p className="mb-6 text-muted-foreground leading-relaxed">
                 Rehabilitación especializada para disfunciones uroginecológicas, embarazo y postparto con tecnología ecográfica.
               </p>
-              <Link href="#" className="inline-flex items-center text-sm font-medium text-primary group-hover:text-secondary transition-colors">
+              <Link href="#reserva" className="inline-flex items-center text-sm font-medium text-primary group-hover:text-secondary transition-colors">
                 Ver tratamientos <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </div>
@@ -129,7 +135,7 @@ export default function Home() {
               <p className="mb-6 text-muted-foreground leading-relaxed">
                 Diagnóstico y tratamiento holístico buscando el origen mecánico del dolor para lograr una recuperación duradera.
               </p>
-              <Link href="#" className="inline-flex items-center text-sm font-medium text-primary group-hover:text-secondary transition-colors">
+              <Link href="#reserva" className="inline-flex items-center text-sm font-medium text-primary group-hover:text-secondary transition-colors">
                 Ver tratamientos <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </div>
@@ -156,10 +162,10 @@ export default function Home() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              { name: "Alejandro Gómez", role: "Fisioterapeuta Deportivo", col: "Col. 1234", spec: "Readaptación", image: "/images/team1.png" },
-              { name: "Lucía Martín", role: "Esp. Suelo Pélvico", col: "Col. 5678", spec: "Ecografía", image: "/images/team2.png" },
-              { name: "David Ruiz", role: "Osteópata C.O.", col: "Col. 9012", spec: "Terapia Manual", image: "/images/team3.png" },
-              { name: "Carmen Vega", role: "Nutricionista Clínica", col: "Col. 3456", spec: "Nutrición Deportiva", image: "/images/team4.png" }
+              { name: "Alejandro Gómez", role: "Fisioterapeuta Deportivo", col: "Col. 1234", spec: "Readaptación", image: team1Img },
+              { name: "Lucía Martín", role: "Esp. Suelo Pélvico", col: "Col. 5678", spec: "Ecografía", image: team2Img },
+              { name: "David Ruiz", role: "Osteópata C.O.", col: "Col. 9012", spec: "Terapia Manual", image: team3Img },
+              { name: "Carmen Vega", role: "Nutricionista Clínica", col: "Col. 3456", spec: "Nutrición Deportiva", image: team4Img }
             ].map((member, idx) => (
               <div key={idx} className="group relative overflow-hidden rounded-3xl bg-white border border-border">
                 <div className="aspect-[4/5] bg-zinc-200 flex items-center justify-center overflow-hidden relative">
