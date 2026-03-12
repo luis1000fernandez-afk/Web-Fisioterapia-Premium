@@ -3,10 +3,6 @@ import Link from "next/link";
 import { ArrowRight, CheckCircle2, Activity, Heart, Shield, Star, MapPin, Map } from "lucide-react";
 
 import heroImg from "../../public/images/hero.png";
-import team1Img from "../../public/images/team1.png";
-import team2Img from "../../public/images/team2.png";
-import team3Img from "../../public/images/team3.png";
-import team4Img from "../../public/images/team4.png";
 
 export default function Home() {
   return (
@@ -109,7 +105,7 @@ export default function Home() {
               <p className="mb-6 text-muted-foreground leading-relaxed">
                 Prevención, tratamiento y readaptación de lesiones deportivas para devolverte al máximo rendimiento lo antes posible.
               </p>
-              <Link href="#reserva" className="inline-flex items-center text-sm font-medium text-primary group-hover:text-secondary transition-colors">
+              <Link href="/especialidades/deportiva" className="inline-flex items-center text-sm font-medium text-primary group-hover:text-secondary transition-colors">
                 Ver tratamientos <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </div>
@@ -122,7 +118,7 @@ export default function Home() {
               <p className="mb-6 text-muted-foreground leading-relaxed">
                 Rehabilitación especializada para disfunciones uroginecológicas, embarazo y postparto con tecnología ecográfica.
               </p>
-              <Link href="#reserva" className="inline-flex items-center text-sm font-medium text-primary group-hover:text-secondary transition-colors">
+              <Link href="/especialidades/suelo-pelvico" className="inline-flex items-center text-sm font-medium text-primary group-hover:text-secondary transition-colors">
                 Ver tratamientos <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </div>
@@ -135,7 +131,7 @@ export default function Home() {
               <p className="mb-6 text-muted-foreground leading-relaxed">
                 Diagnóstico y tratamiento holístico buscando el origen mecánico del dolor para lograr una recuperación duradera.
               </p>
-              <Link href="#reserva" className="inline-flex items-center text-sm font-medium text-primary group-hover:text-secondary transition-colors">
+              <Link href="/especialidades/osteopatia" className="inline-flex items-center text-sm font-medium text-primary group-hover:text-secondary transition-colors">
                 Ver tratamientos <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </div>
@@ -143,107 +139,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* EQUIPO SECTION */}
-      <section id="equipo" className="py-24 bg-muted/30">
-        <div className="container mx-auto px-6">
-          <div className="flex flex-col lg:flex-row justify-between items-end mb-16 gap-6">
-            <div className="max-w-2xl">
-              <h2 className="text-3xl font-semibold tracking-tight text-primary sm:text-4xl font-outfit mb-4">
-                Profesionales de confianza
-              </h2>
-              <p className="text-lg text-muted-foreground">
-                Nuestro personal está altamente cualificado y en constante formación para ofrecerte la élite de la fisioterapia.
-              </p>
-            </div>
-            <Link href="#reserva" className="hidden lg:inline-flex h-12 items-center justify-center rounded-full bg-primary px-6 text-sm font-medium text-primary-foreground transition-all hover:bg-primary/90">
-              Conocer al equipo completo
-            </Link>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              { name: "Alejandro Gómez", role: "Fisioterapeuta Deportivo", col: "Col. 1234", spec: "Readaptación", image: team1Img },
-              { name: "Lucía Martín", role: "Esp. Suelo Pélvico", col: "Col. 5678", spec: "Ecografía", image: team2Img },
-              { name: "David Ruiz", role: "Osteópata C.O.", col: "Col. 9012", spec: "Terapia Manual", image: team3Img },
-              { name: "Carmen Vega", role: "Nutricionista Clínica", col: "Col. 3456", spec: "Nutrición Deportiva", image: team4Img }
-            ].map((member, idx) => (
-              <div key={idx} className="group relative overflow-hidden rounded-3xl bg-white border border-border">
-                <div className="aspect-[4/5] bg-zinc-200 flex items-center justify-center overflow-hidden relative">
-                  <Image src={member.image} alt={member.name} fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw" className="object-cover group-hover:scale-105 transition-transform duration-500" />
-                </div>
-                <div className="p-6">
-                  <div className="flex justify-between items-start mb-2">
-                    <h3 className="text-lg font-semibold text-primary font-outfit">{member.name}</h3>
-                  </div>
-                  <p className="text-sm font-medium text-secondary mb-1">{member.role}</p>
-                  <p className="text-xs text-muted-foreground mb-4">Nº {member.col} • {member.spec}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* TESTIMONIOS SECTION */}
-      <section id="testimonios" className="py-24 bg-white overflow-hidden relative">
-        {/* Decorative background */}
-        <div className="absolute top-0 right-0 -mt-20 -mr-20 w-80 h-80 bg-secondary/10 rounded-full blur-3xl pointer-events-none"></div>
-        <div className="absolute bottom-0 left-0 -mb-20 -ml-20 w-80 h-80 bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
-
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <h2 className="text-3xl font-semibold tracking-tight text-primary sm:text-4xl font-outfit mb-4">
-              Lo que dicen nuestros pacientes
-            </h2>
-            <p className="text-lg text-muted-foreground">
-              La satisfacción y recuperación de quienes confían en nosotros es nuestro mayor logro.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                text: "Llevaba meses con un dolor crónico en el hombro que me impedía entrenar. En KinePremium dieron con el problema desde la primera sesión. ¡100% recomendables!",
-                author: "Carlos M.",
-                role: "Atleta Amateur",
-                rating: 5
-              },
-              {
-                text: "El trato es excepcional y las instalaciones son inmejorables. Fui por una lesión de rodilla y el seguimiento personalizado que me hicieron marcó la diferencia en mi recuperación.",
-                author: "Elena R.",
-                role: "Paciente de Traumatología",
-                rating: 5
-              },
-              {
-                text: "Como madre primeriza, el equipo de suelo pélvico me dio mucha tranquilidad. Su profesionalidad y el uso de ecografía me ayudaron a entender y mejorar mi situación.",
-                author: "Sofía T.",
-                role: "Paciente de Suelo Pélvico",
-                rating: 5
-              }
-            ].map((testimonial, idx) => (
-              <div key={idx} className="bg-muted/30 p-8 rounded-3xl border border-border relative">
-                <div className="flex gap-1 mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 fill-secondary text-secondary" />
-                  ))}
-                </div>
-                <p className="text-muted-foreground italic mb-6 leading-relaxed">
-                  "{testimonial.text}"
-                </p>
-                <div className="flex items-center gap-4">
-                  <div className="h-10 w-10 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold">
-                    {testimonial.author.charAt(0)}
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-primary">{testimonial.author}</h4>
-                    <p className="text-xs text-muted-foreground">{testimonial.role}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Secciones Equipo y Testimonios eliminadas por petición del usuario */}
 
       {/* CONTACTO Y RESERVA SECTION */}
       <section id="reserva" className="py-24 bg-primary text-primary-foreground relative overflow-hidden">

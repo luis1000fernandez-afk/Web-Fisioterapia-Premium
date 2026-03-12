@@ -38,11 +38,9 @@ export function Footer() {
                     {/* Enlaces */}
                     <div className="flex flex-col gap-4">
                         <h4 className="font-semibold text-lg text-white font-outfit mb-2">Enlaces Rápidos</h4>
-                        <Link href="#inicio" className="text-sm text-primary-foreground/70 hover:text-secondary transition-colors w-fit">Inicio</Link>
-                        <Link href="#especialidades" className="text-sm text-primary-foreground/70 hover:text-secondary transition-colors w-fit">Especialidades</Link>
-                        <Link href="#equipo" className="text-sm text-primary-foreground/70 hover:text-secondary transition-colors w-fit">Nuestro Equipo</Link>
-                        <Link href="#testimonios" className="text-sm text-primary-foreground/70 hover:text-secondary transition-colors w-fit">Opiniones</Link>
-                        <Link href="#reserva" className="text-sm text-primary-foreground/70 hover:text-secondary transition-colors w-fit">Pedir Cita</Link>
+                        <Link href="/#inicio" className="text-sm text-primary-foreground/70 hover:text-secondary transition-colors w-fit">Inicio</Link>
+                        <Link href="/#especialidades" className="text-sm text-primary-foreground/70 hover:text-secondary transition-colors w-fit">Especialidades</Link>
+                        <Link href="/#reserva" className="text-sm text-primary-foreground/70 hover:text-secondary transition-colors w-fit">Pedir Cita</Link>
                     </div>
 
                     {/* Horario */}
